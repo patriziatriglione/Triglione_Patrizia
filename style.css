@@ -202,6 +202,10 @@ height:3em;
     width:20em;
   }
 }
+/*Contatti*/
+#testocontatti {
+  color:white;
+}
 /*Scrollbar*/
 body::-webkit-scrollbar {
   width: 10px;
