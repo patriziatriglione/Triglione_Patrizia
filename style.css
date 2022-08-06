@@ -227,6 +227,8 @@ body::-webkit-scrollbar-corner {
 button a:visited {
   color:orange;
 }
+button {
+ color:orange;}
 #italy:visited {
   color:black;
 }
