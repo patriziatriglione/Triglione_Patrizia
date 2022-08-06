@@ -227,6 +227,10 @@ body::-webkit-scrollbar-corner {
 button a:visited {
   color:orange;
 }
+button a:focus {
+ color:orange;}
+button a:hover {
+ color:yellow;}
 #italy:visited {
   color:black;
 }
