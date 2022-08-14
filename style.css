@@ -224,11 +224,11 @@ body::-webkit-scrollbar-corner {
   background-color: palevioletred;
 }
 /*button*/
-button a:visited, a:hover {
+.link, :visited {
   color:orange;
 }
-.link {
-  color:orange;
+.link:hover {
+  color:yellow;
 }
 #italy:visited {
   color:black;
