@@ -227,7 +227,7 @@ body::-webkit-scrollbar-corner {
 .link, :visited {
   color:orange;
 }
-.link:hover {
+button:hover {
   color:yellow;
 }
 #italy:visited {
