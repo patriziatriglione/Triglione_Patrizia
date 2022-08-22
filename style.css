@@ -12,10 +12,10 @@ height:3em;
 .navbar {
   background:black;
 }
-.arancio {
+.orange {
   color:orange;
 }
-.arancio:hover {
+.orange:hover {
   color:yellow;
 }
 .dropdown-item:active {
@@ -29,70 +29,70 @@ height:3em;
 #logoheader {
   animation-duration:2s;
 }
-.effetto {
+.effect {
   animation-iteration-count: 5;
 }
 /*Sfondo*/
-.effettosfondo {
+.backgroundeffect {
   z-index:-1;
   position: absolute;
 }
-/*Su di me*/
-#fotosudime {
+/*on me*/
+#photoaboutme {
   max-width: 100%;
   height: auto;
 }
-.sudime {
+.aboutme {
   transition:trasform .2s;
 }
-.sudime:hover {
+.aboutme:hover {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5);
 }
 @media only screen and (max-width:767px) {
-  .sudime {
+  .aboutme {
     width:80%;
   }
 }
 @media only screen and (min-width:992px) and (max-width:1178px) {
-  .sudime {
+  .aboutme {
     margin-left:-15%;
   }
 }
 @media only screen and (max-width:767px) {
-  #fine {
+  #end {
     margin-left:-20%;
   }
 }
 @media only screen and (min-width:772px) and (max-width:990px) {
-  #fine {
+  #end {
     margin-left:-20%;
   }
 }
 /*carousel*/
-.sfondo {
+.background {
   background-color:orange;
   padding: 3% 0;
 }
-.containercarosello {
+.containercarousel {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 768px) {
-  .containercarosello {
+  .containercarousel {
         width: 750px;
             }
 }
 @media (min-width: 992px) {
-  .containercarosello {
+  .containercarousel {
          width: 970px;
              }
 }
 @media (min-width: 1200px) {
-    .containercarosello {
+    .containercarousel {
           width: 1170px;
               }
 }
@@ -178,11 +178,11 @@ height:3em;
   width:50%;
   margin:auto;
 }
-#scrittahobby {
+#hobbywritten {
   color:orange!important;
 }
 /*elementi grafici*/
-.effetto {
+.effect {
   width:10em;
 }
 #bang {
@@ -192,7 +192,7 @@ height:3em;
   left:40%;
 }
 @media only screen and (max-width:1048px) {
-  .effetto {
+  .effect {
     display:none;
   }
   #bang {
@@ -203,7 +203,7 @@ height:3em;
   }
 }
 /*Contatti*/
-#testocontatti {
+#contacttext {
   color:white;
 }
 /*Scrollbar*/
