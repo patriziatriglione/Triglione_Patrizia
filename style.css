@@ -188,14 +188,11 @@ height:3em;
 #bang {
   width: 45%;
   position:absolute;
-  bottom:0%;
+  bottom:50%;
   left:40%;
 }
 @media only screen and (max-width:1048px) {
   .effect {
-    display:none;
-  }
-  #bang {
     display:none;
   }
   #logoheader {
