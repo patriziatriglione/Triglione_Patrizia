@@ -24,44 +24,30 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
             emailjs.init('kAAv2a9uxllPFoofv');
         })();
     </script>
-    <script>
-emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form")
-</script>
-<script>
-      // listen to the form submission
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          const serviceID = "service_f0hzmm9";
-          const templateID = "template_hdii7ub";
-
-          // send the email here
-          emailjs.sendForm(serviceID, templateID, this).then(
-            (response) => {
-              console.log("SUCCESS!", response.status, response.text);
-              alert("SUCCESS!");
-            },
-            (error) => {
-              console.log("FAILED...", error);
-              alert("FAILED...", error);
-            }
-          );
-        });
-    </script>
-
-;
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_f0hzmm9', 'template_hdii7ub', #contact-form)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
             });
         }
     </script>
-    </head>
+</head>
     <body id="socialchannels" >
 <!-- Navbar -->
      <nav class="navbar navbar-expand-xl navbar-dark sticky-top">
@@ -442,15 +428,15 @@ emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form")
        Potete contattarmi attraverso i vari <b><a href="#socialchannels" class="orange">SOCIAL</a></b><br>
        O, se preferite, compilare il form presente in <b><a href="https://patgraphics.altervista.org/contacts/" target="_blank" class="orange">QUESTA PAGINA</a></b>
        <form id="contact-form">
-        <input type="hidden" name="contact_number">
-        <label>Name</label><br>
-        <input type="text" name="user_name" class="contact"><br>
-        <label>Email</label><br>
-        <input type="email" name="user_email" class="contact"><br>
-        <label>Message</label><br>
-        <textarea name="message" class="contact"></textarea><br>
-        <input type="submit" value="Send">
-    </form>
+           <input type="hidden" name="contact_number">
+           <label>Name</label>
+           <input type="text" name="user_name">
+           <label>Email</label>
+           <input type="email" name="user_email">
+           <label>Message</label>
+           <textarea name="message"></textarea>
+           <input type="submit" value="Send">
+       </form>
      </p>
      </div>
   </div>
