@@ -238,3 +238,7 @@ body::-webkit-scrollbar-corner {
   margin:auto!important;
   width:55%!important;
 }
+
+.contact {
+  margin:10px;
+}

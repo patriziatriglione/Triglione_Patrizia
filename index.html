@@ -403,6 +403,16 @@
      <h2>Per contattarmi</h2>
        Potete contattarmi attraverso i vari <b><a href="#socialchannels" class="orange">SOCIAL</a></b><br>
        O, se preferite, compilare il form presente in <b><a href="https://patgraphics.altervista.org/contacts/" target="_blank" class="orange">QUESTA PAGINA</a></b>
+       <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label><br>
+        <input type="text" name="user_name" class="contact"><br>
+        <label>Email</label><br>
+        <input type="email" name="user_email" class="contact"><br>
+        <label>Message</label><br>
+        <textarea name="message" class="contact"></textarea><br>
+        <input type="submit" value="Send">
+    </form>
      </p>
      </div>
   </div>
@@ -439,5 +449,28 @@ $(document).ready(function(){
   $('#featureCarousel').carousel('pause');
 });
 </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('kAAv2a9uxllPFoofv');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
       </body>
     </html>
