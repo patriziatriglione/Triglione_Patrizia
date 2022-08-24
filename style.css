@@ -185,12 +185,6 @@ height:3em;
 .effect {
   width:10em;
 }
-#bang {
-  width: 45%;
-  position:absolute;
-  bottom:50%;
-  left:40%;
-}
 @media only screen and (max-width:1048px) {
   .effect {
     display:none;
