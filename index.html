@@ -23,6 +23,44 @@
 <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('kAAv2a9uxllPFoofv');
+        })();
+    </script>
+    <script>
+emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form")
+</script>
+<script>
+      // listen to the form submission
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const serviceID = "service_f0hzmm9";
+          const templateID = "template_hdii7ub";
+
+          // send the email here
+          emailjs.sendForm(serviceID, templateID, this).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("SUCCESS!");
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              alert("FAILED...", error);
+            }
+          );
+        });
+    </script>
+
+;
+            });
+        }
+    </script>
     </head>
     <body id="socialchannels" >
 <!-- Navbar -->
@@ -449,28 +487,5 @@ $(document).ready(function(){
   $('#featureCarousel').carousel('pause');
 });
 </script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('kAAv2a9uxllPFoofv');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
       </body>
     </html>
