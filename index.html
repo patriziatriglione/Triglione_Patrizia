@@ -25,28 +25,8 @@
 <meta name="theme-color" content="#ffffff">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('kAAv2a9uxllPFoofv');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('service_f0hzmm9', 'template_hdii7ub', #contact-form)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"/>
 </head>
     <body id="socialchannels" >
 <!-- Navbar -->
@@ -423,20 +403,37 @@
 <!--Contacts-->
 <div class="container" style="position:relative; margin-top:10%;">
   <div class="row gx-1 justify-content-center">
-   <div class="col-12" id="contacttext">
+   <div class="col-12 text-center" id="contacttext">
      <h2>Per contattarmi</h2>
        Potete contattarmi attraverso i vari <b><a href="#socialchannels" class="orange">SOCIAL</a></b><br>
-       O, se preferite, compilare il form presente in <b><a href="https://patgraphics.altervista.org/contacts/" target="_blank" class="orange">QUESTA PAGINA</a></b>
-       <form id="contact-form">
-           <input type="hidden" name="contact_number">
-           <label>Name</label>
-           <input type="text" name="user_name">
-           <label>Email</label>
-           <input type="email" name="user_email">
-           <label>Message</label>
-           <textarea name="message"></textarea>
-           <input type="submit" value="Send">
+       O, se preferite, compilare il form qui presente:<br><br>
+<!--Form-->
+       <form id="myForm">
+<!-- name -->
+         <div class="form-group">
+           <label for="name">Name</label>
+           <input type="name" name="name" class="form-control" id="name" placeholder="enter your name"/>
+         </div>
+<!-- email -->
+         <div class="form-group">
+           <label for="email">Email address</label>
+           <input type="email" name="email" class="form-control" id="email" placeholder="enter your email"/>
+         </div>
+<!-- subject -->
+         <div class="form-group">
+           <label for="subject">Subject</label>
+           <input type="text" name="subject" class="form-control" id="subject" placeholder="enter email subject"/>
+         </div>
+<!--message-->
+         <div class="form-group">
+           <label for="message">Message</label>
+           <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+         </div><br>
+<button type="submit" class="btn btn-primary" style="background-color:orange;">Submit</button>
        </form>
+     </div>
+   </div>
+ </div>
      </p>
      </div>
   </div>
@@ -472,6 +469,51 @@ $(document).ready(function(){
   $('#featureCarousel').carousel({interval: false});
   $('#featureCarousel').carousel('pause');
 });
+</script>
+<!-- bootstrap js -->
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+  crossorigin="anonymous"
+></script>
+
+<!-- Email JS -->
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("kAAv2a9uxllPFoofv");
+  })();
+</script>
+<script>
+  // listen to the form submission
+  document
+    .getElementById("myForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const serviceID = "service_f0hzmm9";
+      const templateID = "template_hdii7ub";
+
+      // send the email here
+      emailjs.sendForm(serviceID, templateID, this).then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error);
+          alert("FAILED...", error);
+        }
+      );
+    });
 </script>
       </body>
     </html>
