@@ -233,3 +233,8 @@ body::-webkit-scrollbar-corner {
 #italy:visited {
   color:black;
 }
+/*CV*/
+.carousel_certificates {
+  margin:auto!important;
+  width:55%!important;
+}
