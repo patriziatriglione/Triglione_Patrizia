@@ -70,6 +70,12 @@ height:3em;
     margin-left:-20%;
   }
 }
+
+/*presentation text*/
+.presentationText {
+ color: orange;
+}
+
 /*carousel*/
 .background {
   background-color:orange;
