@@ -22,7 +22,8 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <!-- Magnific Popup core CSS file -->
-<link rel="stylesheet" href="magnific-popup.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
     </head>
     <body>
 <!-- Navbar -->
@@ -179,14 +180,9 @@
         <a href="https://patriziatriglione.github.io/sitobaresempio/" target="_blank" class="link">Visita il sito</a>
     </button>
     <button type="button" class="btn btn-dark" data-mdb-ripple-color="#ffffff">
-      <a href="#test-popup" class="open-popup-link">Presentazione</a>
+      Presentazione
     </button>
 </div>
-</div>
-<div id="test-popup" class="white-popup mfp-hide">
-  <img src="Images/hobby/music.svg">
-  <img src="Images/certificates/b1_telc_deutsch.png">
-  <img src="Images/logo.svg">
 </div>
 <div class="col-lg-4 col-md-12">
 <div class="card text-center my-2 mx-5" style="background-color:orange;">
@@ -202,6 +198,14 @@
 </div>
 </div>
 </div>
+<a href="Images/germany.png" data-fancybox="gallery" data-caption="Caption #1">
+  <img src="Images/certificates/adobe_certified.png" />
+</a>
+
+<a href="Images/attention.svg" data-fancybox="gallery" data-caption="Caption #2">
+  <img src="Images/effect1.svg" />
+</a>
+
 <!--Footer-->
 <div class="container-fluid mt-5" style="background-color:orange;">
   <div class="row justify-content-center text-center">
@@ -209,17 +213,13 @@
    <p>Patrizia Triglione | Tutti i diritti riservati</p></div>
  </div>
 </div>
+<script>Fancybox.bind('[data-fancybox="gallery"]', {
+  // Your custom options
+});</script>
 <!-- MDB -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Magnific Popup core JS file -->
-<script src="jquery.magnific-popup.js"></script>
-<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>$('.open-popup-link').magnificPopup({
-  type:'inline',
-  midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-});
-</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
       </body>
     </html>
