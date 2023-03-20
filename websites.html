@@ -21,6 +21,8 @@
 <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
     </head>
     <body>
 <!-- Navbar -->
@@ -176,7 +178,13 @@
       <button type="button" class="btn btn-dark" data-mdb-ripple-color="#ffffff">
         <a href="https://patriziatriglione.github.io/sitobaresempio/" target="_blank" class="link">Visita il sito</a>
     </button>
+    <button type="button" class="btn btn-dark gallery-button" data-mdb-ripple-color="#ffffff">Presentazione</button>
 </div>
+</div>
+<div id="gallery" class="mfp-hide">
+  <img src="Images/hobby/music.svg">
+  <img src="Images/certificates/b1_telc_deutsch.png">
+  <img src="Images/logo.svg">
 </div>
 <div class="col-lg-4 col-md-12">
 <div class="card text-center my-2 mx-5" style="background-color:orange;">
@@ -202,5 +210,18 @@
 <!-- MDB -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- Magnific Popup core JS file -->
+<script src="magnific-popup/jquery.magnific-popup.js"></script>
+<script>
+  $('#gallery-button').magnificPopup({
+      items: {
+          src: '#gallery'
+      },
+      type: 'inline'
+  });
+</script>
+
       </body>
     </html>
