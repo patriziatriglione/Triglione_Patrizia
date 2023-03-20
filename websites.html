@@ -213,9 +213,18 @@
    <p>Patrizia Triglione | Tutti i diritti riservati</p></div>
  </div>
 </div>
-<script>Fancybox.bind('[data-fancybox="gallery"]', {
-  closeButton,
-});</script>
+<script>$(document).ready(function() {
+  $('[data-fancybox]').fancybox({
+    loop: true,
+    buttons: [
+      'zoom',
+      'slideShow',
+      'thumbs',
+      'close'
+    ]
+  });
+});
+</script>
 <!-- MDB -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
