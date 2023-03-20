@@ -178,10 +178,12 @@
       <button type="button" class="btn btn-dark" data-mdb-ripple-color="#ffffff">
         <a href="https://patriziatriglione.github.io/sitobaresempio/" target="_blank" class="link">Visita il sito</a>
     </button>
-    <button type="button" class="btn btn-dark gallery-button" data-mdb-ripple-color="#ffffff">Presentazione</button>
+    <button type="button" class="btn btn-dark" data-mdb-ripple-color="#ffffff">
+      <a href="#test-popup" class="open-popup-link">Presentazione</a>
+    </button>
 </div>
 </div>
-<div id="gallery" class="mfp-hide">
+<div id="test-popup" class="white-popup mfp-hide">
   <img src="Images/hobby/music.svg">
   <img src="Images/certificates/b1_telc_deutsch.png">
   <img src="Images/logo.svg">
@@ -214,14 +216,10 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <!-- Magnific Popup core JS file -->
 <script src="magnific-popup/jquery.magnific-popup.js"></script>
-<script>
-  $('#gallery-button').magnificPopup({
-      items: {
-          src: '#gallery'
-      },
-      type: 'inline'
-  });
+<script>$('.open-popup-link').magnificPopup({
+  type:'inline',
+  midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+});
 </script>
-
       </body>
     </html>
