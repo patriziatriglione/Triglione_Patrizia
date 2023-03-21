@@ -253,3 +253,9 @@ body::-webkit-scrollbar-corner {
   max-width: 500px;
   margin: 20px auto;
 }
+
+/*Arrow*/
+#animationarrow {
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  }
